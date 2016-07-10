@@ -95,10 +95,11 @@
     <body>
         <div class="container-fluid" style="background:#fff;">
 
-        <div class="col-sm-2" id="sideNav" style="margin:0 0 0 -50px;padding:20px 20px;height:500px;background:#ccc;text-align:right;position:fixed;">
+        <div class="col-sm-2" id="sideNav" style="margin:0 0 0 -50px;padding:20px 20px;height:500px;background:#333;text-align:right;position:fixed;">
 
         <div style="width:100%;height:100px;"></div>
-          
+          <span style="color:#fff;">Alex</span><br>
+          <hr/>
           <a class="navLink"href="/">工作笔记</a><br>
           <a class="navLink"href="/projects">项目</a>
           <a class="navLink"href=""></a>
@@ -134,7 +135,7 @@
 
             </div> -->
 
-            <div class="col-sm-8 col-offset-2">
+            <div class="col-sm-8 col-offset-2" id="mainCol" >
                 <h1>get Month Name [CF]</h1>
 <span class="time">11 Jun 2016</span>
 
@@ -637,6 +638,8 @@
         <script type="text/javascript">
           $(function(){
             $('#sideNav').height($(window).height());
+
+            $('#mainCol').css('margin-left',$('#sideNav').width());
           });
         </script>
     </body>
