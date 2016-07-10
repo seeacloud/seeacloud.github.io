@@ -1,9 +1,9 @@
-title: Stack Problems
+title: 张海云
 description: My Personal Stack Problems
-author: Agus Makmun
-github: https://github.com/agusmakmun
-about: I am freelance developer. Currently doing more in backend, actually in Python and Django.
-disqus_shortname: stackproblems
+author: 张海云
+github: https://github.com/seeacloud
+about: 不想做全栈的前端不是好前端
+disqus_shortname: 前端笔记本...
 google_analytics: UA-XXXXXXXX-Y
 
 enableTags: true
@@ -14,33 +14,33 @@ collections:
     output: true
     permalink: /project/:path/
 
-social:
-    - icon: fa-facebook
-      link: "#"
-    - icon: fa-skype
-      link: "#"
-    - icon: fa-twitter
-      link: "https://twitter.com/agusmakmun6"
-    - icon: fa-linkedin
-      link: "#"
-    - icon: fa-stack-exchange
-      link: "#"
+# social:
+#     - icon: fa-facebook
+#       link: "#"
+#     - icon: fa-skype
+#       link: "#"
+#     - icon: fa-twitter
+#       link: "https://twitter.com/agusmakmun6"
+#     - icon: fa-linkedin
+#       link: "#"
+#     - icon: fa-stack-exchange
+#       link: "#"
 
-share:
-  twitter_username: agusmakmun6
-  fb_appid: 1749788565247320
+# share:
+#   twitter_username: agusmakmun6
+#   fb_appid: 1749788565247320
 
 urls:
-    - text: About Me
+    - text: 我是谁？
       url: /about/
-    - text: Projects
+    - text: 项目
       url: /projects/
     - text: Github
-      url: https://github.com/agusmakmun
-    - text: XML Feed
-      url: /feed.xml
+      url: https://github.com/seeacloud
+    # - text: XML Feed
+    #   url: /feed.xml
 
-url: "https://agusmakmun.github.io"
+url: "https://seeacloud.github.io"
 baseurl: ""
 paginate: 20
 per_page: 20
