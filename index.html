@@ -2,12 +2,12 @@
 layout: default
 ---
 
-<div id="home">
+<div id="home" >
     <h1>工作笔记</h1>
     <hr />
     <ul class="posts" style="list-style:none;">
     {% for post in paginator.posts %}
-      <li style="height:4rem;"><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
+      <li style="height:4rem;margin-left:-3rem;"><a href="{{ post.url }}">{{ post.title }}</a> &raquo; <i><span>{{ post.date | date_to_string }}</span></i></li>
     {% endfor %}
     </ul>
 
