@@ -5,7 +5,6 @@ date:   2016-06-11 03:43:45 +0700
 categories: [python, codefights]
 ---
 
-
 Map the given integer to a month.
 
 **Example:**
