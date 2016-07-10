@@ -79,33 +79,40 @@
           ga('create', 'UA-XXXXXXXX-Y', 'auto');
           ga('send', 'pageview');
         </script>
+
+        <style type="text/css">
+          .navLink
+          {
+          }
+        </style>
     </head>
 
     <body>
         <div class="container-fluid" style="background:#fff;">
-            <div class="col-sm-3" style="font-size:1rem;background:skyblue;">
+
+        <div class="col-sm-2" id="sideNav" style="margin:0 0 0 -50px;padding:20px 20px;height:500px;background:#ccc;text-align:right;position:fixed;">
+
+        <div style="width:100%;height:100px;"></div>
+          
+          <a class="navLink"href="/">工作笔记</a><br>
+          <a class="navLink"href="/projects">项目</a>
+          <a class="navLink"href=""></a>
+          <a class="navLink"href=""></a>
+          <a class="navLink"href=""></a>
+        </div>
+            <!-- <div class="col-sm-3" style="font-size:1rem;background:skyblue;">
               <div class="fixed-condition" style="background:#ff0;">
-                <!-- <a href="/"><img id="about" src="/static/img/user.png" height="75px" width="75px" /></a> -->
+                <a href="/"><img id="about" src="/static/img/user.png" height="75px" width="75px" /></a>
                 <h1 class="author-name">张海云</h1>
                 
                 <div id="about">
                     不想做全栈的前端不是好设计...
                 </div>
                 
-<!-- 
-                <div class="social">
-                    <ul>
-                        
-                    </ul>
-                </div> -->
 
-                <!-- <div class="search" id="js-search">
-                  <input type="text" placeholder="(sitemap)~$ type to search" class="search__input form-control" id="js-search__input">
-                  <ul class="search__results" id="js-search__results"></ul>
-                </div> -->
                 <hr />
 
-                <!-- <strong>导航</strong><br /> -->
+                
                     &nbsp;&raquo; <a href="/">首页</a> <br />
                 
                     &nbsp;&raquo; <a class="about" href="/about/">我是谁？</a><br />
@@ -115,23 +122,14 @@
                     &nbsp;&raquo; <a class="about" href="https://github.com/seeacloud">Github</a><br />
                 
 
-                
-                
-                      &nbsp;&raquo; <a class="about" href="/about/">我是谁？</a><br />
-                
-                      &nbsp;&raquo; <a class="about" href="/projects/">项目</a><br />
-                
-                      &nbsp;&raquo; <a class="about" href="https://github.com/seeacloud">Github</a><br />
-                
-              </div><!-- end /.fixed-condition -->
+                <a href="/projects">projects</a>
+
+              </div>
 
 
-              <!-- alex navigation -->
+            </div> -->
 
-              <!-- alex navigation end -->
-            </div>
-
-            <div class="col-sm-8 col-offset-1">
+            <div class="col-sm-8 col-offset-2">
                 <header id="post-header">
     <h1 id="post-subtitle">Articles by category: raspberry</h1>
 </header>
@@ -237,10 +235,6 @@
                     - <a href="https://github.com/seeacloud">https://github.com/seeacloud</a> - Powered by Jekyll.
                     
 
-                    <!-- <div class="btn-github" style="float:right;">
-                        <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=star&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>                    
-                        <iframe src="https://ghbtns.com/github-btn.html?user=agusmakmun&repo=agusmakmun.github.io&type=fork&count=true" frameborder="0" scrolling="0" width="85" height="20px"></iframe>
-                    </div> -->
                 </footer>
             </div><!-- end /.col-sm-8 -->
         </div><!-- end /.container -->
@@ -254,5 +248,30 @@
         <script src="/static/js/super-search.js"></script>
         <script src="/static/js/thickbox-compressed.js"></script>
         <script src="/static/js/projects.js"></script>
+
+        <script type="text/javascript">
+          $(function(){
+            $('#sideNav').height($(window).height());
+          });
+        </script>
     </body>
 </html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
