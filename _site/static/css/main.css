@@ -51,8 +51,9 @@ a, a:link, a:active {
 }
 
 a:hover {
-    color: #B3B3B3;
-    text-decoration: underline;
+    /*color: #B3B3B3;*/
+    color: skyblue;
+    text-decoration: none;
 }
 
 /**

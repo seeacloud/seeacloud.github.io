@@ -5,9 +5,24 @@
     <description>My Personal Stack Problems</description>
     <link>https://seeacloud.github.io/</link>
     <atom:link href="https://seeacloud.github.io/sitemap.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jul 2016 21:00:19 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Jul 2016 21:00:19 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Jul 2016 21:12:25 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Jul 2016 21:12:25 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>html测试页</title>
+        <description>&lt;div style=&quot;width:100px;height:100px;background:skyblue;&quot;&gt;&lt;/div&gt;
+
+&lt;div style=&quot;width:50%;height:200px;background:purple;margin:2rem;&quot;&gt;this is div test!&lt;/div&gt;
+</description>
+        <pubDate>Sun, 10 Jul 2016 04:08:45 +0800</pubDate>
+        <link>https://seeacloud.github.io/alex/2016/07/10/htmltest.html</link>
+        <guid isPermaLink="true">https://seeacloud.github.io/alex/2016/07/10/htmltest.html</guid>
+        
+        
+        <category>alex</category>
+        
+      </item>
     
       <item>
         <title>alex test</title>

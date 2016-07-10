@@ -5,9 +5,24 @@
     <description>My Personal Stack Problems</description>
     <link>https://seeacloud.github.io/</link>
     <atom:link href="https://seeacloud.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Sun, 10 Jul 2016 21:00:19 +0800</pubDate>
-    <lastBuildDate>Sun, 10 Jul 2016 21:00:19 +0800</lastBuildDate>
+    <pubDate>Sun, 10 Jul 2016 21:12:25 +0800</pubDate>
+    <lastBuildDate>Sun, 10 Jul 2016 21:12:25 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>html测试页</title>
+        <description>&lt;div style=&quot;width:100px;height:100px;background:skyblue;&quot;&gt;&lt;/div&gt;
+
+&lt;div style=&quot;width:50%;height:200px;background:purple;margin:2rem;&quot;&gt;this is div test!&lt;/div&gt;
+</description>
+        <pubDate>Sun, 10 Jul 2016 04:08:45 +0800</pubDate>
+        <link>https://seeacloud.github.io/alex/2016/07/10/htmltest.html</link>
+        <guid isPermaLink="true">https://seeacloud.github.io/alex/2016/07/10/htmltest.html</guid>
+        
+        
+        <category>alex</category>
+        
+      </item>
     
       <item>
         <title>alex test</title>
@@ -519,53 +534,6 @@ x reversed as described above.&lt;/p&gt;
         <pubDate>Sat, 21 May 2016 15:32:04 +0800</pubDate>
         <link>https://seeacloud.github.io/python/security/2016/05/21/python-simple-ciphertext.html</link>
         <guid isPermaLink="true">https://seeacloud.github.io/python/security/2016/05/21/python-simple-ciphertext.html</guid>
-        
-        
-        <category>python</category>
-        
-        <category>security</category>
-        
-      </item>
-    
-      <item>
-        <title>Python Crazy Decrypter has been Released</title>
-        <description>&lt;p&gt;Hello gays, this night i want to share my Python Crazy Decrypter tool. Python Crazy Decrypter is real crazy tool to decrypt md5, sha1, sha224, sha256, sha384, and sha512 with Brute Force method. Like most hashes Decrypter we know used the database to check the hash is valid or not.&lt;/p&gt;
-
-&lt;p&gt;This Python Crazy Decrypter tool use the brute force method with complete charachters or with custom charachters choices, and with Hash Type Checker. But, of course it will spend a long time if the result of hash have a very long length, coz this use the brute force method.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Example Usage&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;$ crazy_decrypter -a 2f2ec1296695a9fb3251bbc94a2e0cef -c ichp 4 4
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Example Proccess&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;   *** Please drink your coffee first! ***
-    Python Crazy Decrypter 0.0.4
-
-CTRL+C to Exit!
-Charachters to try : ichp
-Min-length         : 3
-Max-length         : 4
-Type Decrypt found : md5
-Trying with        : iipc - 373fa60ea77f4695bc05fbc1b49d40e3
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;&lt;strong&gt;Example Result&lt;/strong&gt;&lt;/p&gt;
-
-&lt;div class=&quot;highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;Decrypt found : chip
-Type Decrypt  : md5
-End time      : 06:53:06
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;p&gt;For more you can checkout on our repository: &lt;a href=&quot;https://github.com/agusmakmun/Crazy-Decrypter&quot;&gt;https://github.com/agusmakmun/Crazy-Decrypter&lt;/a&gt;&lt;/p&gt;
-</description>
-        <pubDate>Sat, 21 May 2016 15:25:20 +0800</pubDate>
-        <link>https://seeacloud.github.io/python/security/2016/05/21/python-crazy-decrypter-has-been-released.html</link>
-        <guid isPermaLink="true">https://seeacloud.github.io/python/security/2016/05/21/python-crazy-decrypter-has-been-released.html</guid>
         
         
         <category>python</category>
