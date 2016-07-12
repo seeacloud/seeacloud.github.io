@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>Email BackEnd with SMTP Gmail - 张海云</title>
+        <title>CSS 双飞翼布局 - 张海云</title>
         <meta name="author" content="张海云" />
-        <meta name="description" content="Email BackEnd with SMTP Gmail" />
-        <meta name="keywords" content="Email BackEnd with SMTP Gmail, 张海云, python, django" />
+        <meta name="description" content="CSS 双飞翼布局" />
+        <meta name="keywords" content="CSS 双飞翼布局, 张海云, CSS" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
         <meta content="" property="fb:app_id">
         <meta content="张海云" property="og:site_name">
         
-          <meta content="Email BackEnd with SMTP Gmail" property="og:title">
+          <meta content="CSS 双飞翼布局" property="og:title">
         
         
           <meta content="article" property="og:type">
@@ -24,10 +24,10 @@
           <meta content="My Personal Stack Problems" property="og:description">
         
         
-          <meta content="https://seeacloud.github.io/python/django/2016/04/19/email-backend-with-smtp-gmail.html" property="og:url">
+          <meta content="https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html" property="og:url">
         
         
-          <meta content="2016-04-19T03:28:15+08:00" property="article:published_time">
+          <meta content="2016-07-11T04:08:45+08:00" property="article:published_time">
           <meta content="https://seeacloud.github.io/about/" property="article:author">
         
         
@@ -35,7 +35,7 @@
         
         
           
-          <meta content="python" property="article:section">
+          <meta content="CSS" property="article:section">
           
         
         
@@ -46,10 +46,10 @@
         <meta name="twitter:site" content="@">
         <meta name="twitter:creator" content="@">
         
-          <meta name="twitter:title" content="Email BackEnd with SMTP Gmail">
+          <meta name="twitter:title" content="CSS 双飞翼布局">
         
         
-          <meta name="twitter:url" content="https://seeacloud.github.io/python/django/2016/04/19/email-backend-with-smtp-gmail.html">
+          <meta name="twitter:url" content="https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html">
         
         
           <meta name="twitter:description" content="My Personal Stack Problems">
@@ -135,33 +135,154 @@
             </div> -->
 
             <div class="col-sm-8 col-offset-2" id="mainCol" >
-                <h1>Email BackEnd with SMTP Gmail</h1>
-<span class="time">19 Apr 2016</span>
+                <h1>CSS 双飞翼布局</h1>
+<span class="time">11 Jul 2016</span>
 
 <span class="categories">
-    &raquo; <a href="/category/python">python</a>, <a href="/category/django">django</a>
+    &raquo; <a href="/category/CSS">CSS</a>
 </span>
 
 
 <div class="content">
-    <div class="post"><p>Add this configurations in your <code class="highlighter-rouge">settings.py</code></p>
+    <div class="post"><p>双飞翼布局：总共分三栏，左侧栏Left，中间主栏Main，右侧栏Right</p>
 
-<p>This configurations is if you work with <code class="highlighter-rouge">smtp.gmail.com</code>, other smtp is similiar with configurations.</p>
+<p>第一步，建立三个div，不过注意，中间Main需要加一个wrap div. 整个结构看起来是这样的：</p>
 
-<ul>
-  <li>Unlock Captha: <a href="https://accounts.google.com/DisplayUnlockCaptcha">https://accounts.google.com/DisplayUnlockCaptcha</a></li>
-  <li>Change to active: <a href="https://www.google.com/settings/security/lesssecureapps">https://www.google.com/settings/security/lesssecureapps</a></li>
-</ul>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+	<span class="nc">.mainWrap-1</span>
+	<span class="p">{</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">100%</span><span class="p">;</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="m">#ccc</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nc">.main-1</span>
+	<span class="p">{</span>
+		<span class="nl">margin-left</span><span class="p">:</span> <span class="m">210px</span><span class="p">;</span> <span class="c">/*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/</span>
+		<span class="nl">margin-right</span><span class="p">:</span> <span class="m">310px</span><span class="p">;</span><span class="c">/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="m">#c33</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nc">.left-1</span>
+	<span class="p">{</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">200px</span><span class="p">;</span>
+		<span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="no">skyblue</span><span class="p">;</span>
+	<span class="p">}</span>
+	<span class="nc">.right-1</span>
+	<span class="p">{</span>
+		<span class="nl">width</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+		<span class="nl">height</span><span class="p">:</span> <span class="m">300px</span><span class="p">;</span>
+		<span class="nl">background</span><span class="p">:</span> <span class="no">green</span><span class="p">;</span>
+	<span class="p">}</span>
+<span class="nt">&lt;/style&gt;</span>
 
-<div class="highlighter-rouge"><pre class="highlight"><code>EMAIL_HOST          = 'smtp.gmail.com'
-EMAIL_PORT          = 587
-EMAIL_HOST_USER     = 'your_gmail@gmail.com'
-EMAIL_HOST_PASSWORD = 'your_password'
-EMAIL_USE_TLS       = True
-DEFAULT_FROM_EMAIL  = EMAIL_HOST_USER
-EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mainWrap-1"</span><span class="nt">&gt;</span>	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main-1"</span><span class="nt">&gt;&lt;/div&gt;&lt;/div&gt;</span>   
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+
 </code></pre>
 </div>
+
+<p><br /></p>
+<style type="text/css">
+	.mainWrap-1
+	{
+		width: 100%;
+		background: #ccc;
+	}
+	.main-1
+	{
+		margin-left: 210px; /*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/
+		margin-right: 310px;/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/
+		background: #c33;
+		height: 100px;
+		color: #fff;
+	}
+	.left-1
+	{
+		width: 200px;
+		height: 100px;
+		background: skyblue;
+		color: #fff;
+	}
+	.right-1
+	{
+		width: 300px;
+		height: 100px;
+		background: green;
+		color: #fff;
+	}
+
+	.clearFloat
+	{
+		clear: both;
+	}
+</style>
+
+<div class="mainWrap-1">	<div class="main-1">Main,<br />margin-left:210px; <br />margin-right:310px;</div></div>
+<div class="left-1">Left <br />width:200px;</div>
+<div class="right-1">Right <br /> width:300px;</div>
+
+<div class="clearFloat"></div>
+
+<p><br /></p>
+
+<p>看起来很混乱，对不对？
+<br /></p>
+
+<p>第二步：动起来！</p>
+
+<p>A, mainWrap,left和right添加float：left；注意，main不添加！！<br />
+B, left 左移动100%的宽度：margin-left:-100%;<br />
+C, right左移动自身的宽度：margin-left:-300px;</p>
+
+<p><br /></p>
+
+<style type="text/css">
+	.mainWrap-2
+	{
+		width: 100%;
+		background: #ccc;
+		float: left;
+		margin-bottom: 50px;
+	}
+	.main-2
+	{
+		margin-left: 210px; /*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/
+		margin-right: 310px;/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/
+		background: #c33;
+		height: 100px;
+		color: #fff;
+	}
+	.left-2
+	{
+		width: 200px;
+		height: 100px;
+		background: skyblue;
+		color: #fff;float: left;
+		margin-left: -100%;
+		
+	}
+	.right-2
+	{
+		width: 300px;
+		height: 100px;
+		background: green;
+		color: #fff;
+		float: left;
+		margin-left: -300px;
+	}
+
+</style>
+
+<div class="mainWrap-2"><div class="main-2">Main</div></div>
+<div class="left-2">Left  <br />float:left; <br /> margin-left:-100%;</div>
+<div class="right-2">Right <br /> float:left; <br />margin-left:-300px;</div>
+
+<p><br /></p>
+
+<p>这就是双飞翼布局了！左右两侧宽度固定，中间主栏宽度自适应，而且，优先加载中间主栏内容，用户体验更好！
+<br /><br />双飞翼布局，你值得拥有！</p>
+
 </div>
     <div class="share-page">
     <span style="float: left;">Share this on &rarr;&nbsp;&nbsp;</span>
@@ -175,7 +296,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- Facebook -->
-    <div class="fb-share-button" data-href="https://seeacloud.github.io/python/django/2016/04/19/email-backend-with-smtp-gmail.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+    <div class="fb-share-button" data-href="https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -194,177 +315,10 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
 
     
     
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <div class="panel-body">
-                <h4>Related Posts</h4>
-                <ul>
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/06/11/get-month-name-cf.html">get Month Name [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/06/11/get-month-name-cf-copy.html">get Month Name [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/06/11/find-the-number-of-even-digits-in-the-given-integer-cf.html">Find the number of even digits in the given integer [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/06/11/find-substrings-for-line-encoding-cf.html">Find Substrings for line Encoding [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/05/22/censorthis-censor-the-words-cf.html">CensorThis - Censor the words [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
-        
-            
-        
-    
-
-    
-    
-        
-            
-                
-                <li class="relatedPost">
-                    <a href="https://seeacloud.github.io/python/codefights/2016/05/22/notpaired-cf.html">notPaired [CF]</a>
-                    
-                        (Categories: <a href="/category/python">python</a>, <a href="/category/codefights">codefights</a>)
-                    
-                </li>
-                
-                
-            
-        
-            
-        
-    
-        
-            
         
             
         
@@ -375,11 +329,14 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
+    
+
+    
     
         
             
+        
+    
         
             
         
@@ -390,11 +347,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-        
-            
         
             
         
@@ -405,11 +358,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-        
-            
         
             
         
@@ -420,20 +369,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-
-    
-    
-        
-            
-        
-            
-        
-    
-        
-            
         
             
         
@@ -444,11 +380,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-        
-            
         
             
         
@@ -459,11 +391,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-        
-            
         
             
         
@@ -474,14 +402,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-
-    
-    
-        
-            
         
             
         
@@ -492,14 +413,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-
-    
-    
-        
-            
         
             
         
@@ -510,11 +424,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-        
-            
         
             
         
@@ -525,11 +435,14 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
+    
+
+    
     
         
             
+        
+    
         
             
         
@@ -540,14 +453,7 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
-            
-        
     
-
-    
-    
-        
-            
         
             
         
@@ -558,21 +464,89 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         
             
         
+    
+        
             
         
     
 
+    
+    
+        
+            
+        
+    
 
-    </ul>
-    </div>
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
 
 
 <div class="PageNavigation">
   
-    <a class="prev" href="/jekyll/2013/12/23/welcome-to-simply-grey.html">&laquo; Welcome to Simply Grey</a>
+    <a class="prev" href="/alex/2016/07/10/htmltest.html">&laquo; html测试页</a>
   
-  
-    <a class="next" href="/python/bash/2016/04/19/remove-all-files-pyc-with-recrusive-method.html">Remove all files .pyc with recrusive method &raquo;</a>
   
 </div>
 
@@ -583,8 +557,8 @@ EMAIL_BACKEND       = 'django.core.mail.backends.smtp.EmailBackend'
         /* <![CDATA[ */
 
         var disqus_shortname = "前端笔记本...";
-        var disqus_identifier = "https://seeacloud.github.io_Email BackEnd with SMTP Gmail";
-        var disqus_title = "Email BackEnd with SMTP Gmail";
+        var disqus_identifier = "https://seeacloud.github.io_CSS 双飞翼布局";
+        var disqus_title = "CSS 双飞翼布局";
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {

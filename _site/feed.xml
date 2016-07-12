@@ -5,9 +5,160 @@
     <description>My Personal Stack Problems</description>
     <link>https://seeacloud.github.io/</link>
     <atom:link href="https://seeacloud.github.io/feed.xml" rel="self" type="application/rss+xml"/>
-    <pubDate>Mon, 11 Jul 2016 07:58:23 +0800</pubDate>
-    <lastBuildDate>Mon, 11 Jul 2016 07:58:23 +0800</lastBuildDate>
+    <pubDate>Tue, 12 Jul 2016 11:39:35 +0800</pubDate>
+    <lastBuildDate>Tue, 12 Jul 2016 11:39:35 +0800</lastBuildDate>
     <generator>Jekyll v3.1.6</generator>
+    
+      <item>
+        <title>CSS 双飞翼布局</title>
+        <description>&lt;p&gt;双飞翼布局：总共分三栏，左侧栏Left，中间主栏Main，右侧栏Right&lt;/p&gt;
+
+&lt;p&gt;第一步，建立三个div，不过注意，中间Main需要加一个wrap div. 整个结构看起来是这样的：&lt;/p&gt;
+
+&lt;div class=&quot;language-html highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;style &lt;/span&gt;&lt;span class=&quot;na&quot;&gt;type=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;text/css&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;
+	&lt;span class=&quot;nc&quot;&gt;.mainWrap-1&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;100%&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#ccc&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;nc&quot;&gt;.main-1&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;margin-left&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;210px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;/*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;margin-right&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;310px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;&lt;span class=&quot;c&quot;&gt;/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;#c33&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;nc&quot;&gt;.left-1&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;200px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;skyblue&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+	&lt;span class=&quot;nc&quot;&gt;.right-1&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;width&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;height&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;m&quot;&gt;300px&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+		&lt;span class=&quot;nl&quot;&gt;background&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;no&quot;&gt;green&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;;&lt;/span&gt;
+	&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;/style&amp;gt;&lt;/span&gt;
+
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;mainWrap-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&lt;/span&gt;	&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;main-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;   
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;left-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+&lt;span class=&quot;nt&quot;&gt;&amp;lt;div&lt;/span&gt; &lt;span class=&quot;na&quot;&gt;class=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;&quot;right-1&quot;&lt;/span&gt;&lt;span class=&quot;nt&quot;&gt;&amp;gt;&amp;lt;/div&amp;gt;&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+&lt;style type=&quot;text/css&quot;&gt;
+	.mainWrap-1
+	{
+		width: 100%;
+		background: #ccc;
+	}
+	.main-1
+	{
+		margin-left: 210px; /*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/
+		margin-right: 310px;/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/
+		background: #c33;
+		height: 100px;
+		color: #fff;
+	}
+	.left-1
+	{
+		width: 200px;
+		height: 100px;
+		background: skyblue;
+		color: #fff;
+	}
+	.right-1
+	{
+		width: 300px;
+		height: 100px;
+		background: green;
+		color: #fff;
+	}
+
+	.clearFloat
+	{
+		clear: both;
+	}
+&lt;/style&gt;
+
+&lt;div class=&quot;mainWrap-1&quot;&gt;	&lt;div class=&quot;main-1&quot;&gt;Main,&lt;br /&gt;margin-left:210px; &lt;br /&gt;margin-right:310px;&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;left-1&quot;&gt;Left &lt;br /&gt;width:200px;&lt;/div&gt;
+&lt;div class=&quot;right-1&quot;&gt;Right &lt;br /&gt; width:300px;&lt;/div&gt;
+
+&lt;div class=&quot;clearFloat&quot;&gt;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;看起来很混乱，对不对？
+&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;第二步：动起来！&lt;/p&gt;
+
+&lt;p&gt;A, mainWrap,left和right添加float：left；注意，main不添加！！&lt;br /&gt;
+B, left 左移动100%的宽度：margin-left:-100%;&lt;br /&gt;
+C, right左移动自身的宽度：margin-left:-300px;&lt;/p&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;style type=&quot;text/css&quot;&gt;
+	.mainWrap-2
+	{
+		width: 100%;
+		background: #ccc;
+		float: left;
+		margin-bottom: 50px;
+	}
+	.main-2
+	{
+		margin-left: 210px; /*左侧栏的宽度为200px，此处设置为210px，是为了留出10px的间隔*/
+		margin-right: 310px;/*左侧栏的宽度为300px，此处设置为310px，是为了留出10px的间隔*/
+		background: #c33;
+		height: 100px;
+		color: #fff;
+	}
+	.left-2
+	{
+		width: 200px;
+		height: 100px;
+		background: skyblue;
+		color: #fff;float: left;
+		margin-left: -100%;
+		
+	}
+	.right-2
+	{
+		width: 300px;
+		height: 100px;
+		background: green;
+		color: #fff;
+		float: left;
+		margin-left: -300px;
+	}
+
+&lt;/style&gt;
+
+&lt;div class=&quot;mainWrap-2&quot;&gt;&lt;div class=&quot;main-2&quot;&gt;Main&lt;/div&gt;&lt;/div&gt;
+&lt;div class=&quot;left-2&quot;&gt;Left  &lt;br /&gt;float:left; &lt;br /&gt; margin-left:-100%;&lt;/div&gt;
+&lt;div class=&quot;right-2&quot;&gt;Right &lt;br /&gt; float:left; &lt;br /&gt;margin-left:-300px;&lt;/div&gt;
+
+&lt;p&gt;&lt;br /&gt;&lt;/p&gt;
+
+&lt;p&gt;这就是双飞翼布局了！左右两侧宽度固定，中间主栏宽度自适应，而且，优先加载中间主栏内容，用户体验更好！
+&lt;br /&gt;&lt;br /&gt;双飞翼布局，你值得拥有！&lt;/p&gt;
+
+</description>
+        <pubDate>Mon, 11 Jul 2016 04:08:45 +0800</pubDate>
+        <link>https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html</link>
+        <guid isPermaLink="true">https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html</guid>
+        
+        
+        <category>CSS</category>
+        
+      </item>
     
       <item>
         <title>html测试页</title>
@@ -584,34 +735,6 @@ x reversed as described above.&lt;/p&gt;
         <category>python</category>
         
         <category>codefights</category>
-        
-      </item>
-    
-      <item>
-        <title>Python Simple Ciphertext</title>
-        <description>&lt;p&gt;Simply how to make a ciphertext only with 1 line. in this sample, the plaintext is result encoded from hexa. and then, just changing all integer &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt; and also otherwise from &lt;code class=&quot;highlighter-rouge&quot;&gt;6&lt;/code&gt; to &lt;code class=&quot;highlighter-rouge&quot;&gt;3&lt;/code&gt;.&lt;/p&gt;
-
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#hex_encode = &#39;summonagus&#39;.encode(&#39;hex&#39;)&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hex_encode&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;73756d6d6f6e61677573&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;  &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;s&quot;&gt;&#39;&#39;&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;join&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;([&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;str&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;isdigit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;a&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;==&lt;/span&gt; &lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;else&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;a&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hex_encode&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;hex_encode&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;&#39;73756d6d6f6e61677573&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;chip&lt;/span&gt;
-&lt;span class=&quot;s&quot;&gt;&#39;76753d3d3f3e31377576&#39;&lt;/span&gt;
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
-&lt;span class=&quot;o&quot;&gt;&amp;gt;&amp;gt;&amp;gt;&lt;/span&gt; 
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-</description>
-        <pubDate>Sat, 21 May 2016 15:32:04 +0800</pubDate>
-        <link>https://seeacloud.github.io/python/security/2016/05/21/python-simple-ciphertext.html</link>
-        <guid isPermaLink="true">https://seeacloud.github.io/python/security/2016/05/21/python-simple-ciphertext.html</guid>
-        
-        
-        <category>python</category>
-        
-        <category>security</category>
         
       </item>
     
