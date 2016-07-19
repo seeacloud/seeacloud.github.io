@@ -6,16 +6,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
         <link rel="shortcut icon" href="/static/img/favicon.ico" />
-        <title>Parsing JSON with Ruby - 张海云</title>
+        <title>CSS 圣杯布局 - 张海云</title>
         <meta name="author" content="张海云" />
-        <meta name="description" content="Parsing JSON with Ruby" />
-        <meta name="keywords" content="Parsing JSON with Ruby, 张海云, ruby" />
+        <meta name="description" content="CSS 圣杯布局" />
+        <meta name="keywords" content="CSS 圣杯布局, 张海云, CSS" />
         <link rel="alternate" type="application/rss+xml" title="RSS" href="/feed.xml">
 
         <meta content="" property="fb:app_id">
         <meta content="张海云" property="og:site_name">
         
-          <meta content="Parsing JSON with Ruby" property="og:title">
+          <meta content="CSS 圣杯布局" property="og:title">
         
         
           <meta content="article" property="og:type">
@@ -24,10 +24,10 @@
           <meta content="My Personal Stack Problems" property="og:description">
         
         
-          <meta content="https://seeacloud.github.io/ruby/2013/12/23/ruby-json.html" property="og:url">
+          <meta content="https://seeacloud.github.io/css/2016/07/11/shengbei.html" property="og:url">
         
         
-          <meta content="2013-12-23T01:18:23+08:00" property="article:published_time">
+          <meta content="2016-07-11T04:08:45+08:00" property="article:published_time">
           <meta content="https://seeacloud.github.io/about/" property="article:author">
         
         
@@ -35,7 +35,7 @@
         
         
           
-          <meta content="ruby" property="article:section">
+          <meta content="CSS" property="article:section">
           
         
         
@@ -46,10 +46,10 @@
         <meta name="twitter:site" content="@">
         <meta name="twitter:creator" content="@">
         
-          <meta name="twitter:title" content="Parsing JSON with Ruby">
+          <meta name="twitter:title" content="CSS 圣杯布局">
         
         
-          <meta name="twitter:url" content="https://seeacloud.github.io/ruby/2013/12/23/ruby-json.html">
+          <meta name="twitter:url" content="https://seeacloud.github.io/css/2016/07/11/shengbei.html">
         
         
           <meta name="twitter:description" content="My Personal Stack Problems">
@@ -135,48 +135,28 @@
             </div> -->
 
             <div class="col-sm-8 col-offset-2" id="mainCol" >
-                <h1>Parsing JSON with Ruby</h1>
-<span class="time">23 Dec 2013</span>
+                <h1>CSS 圣杯布局</h1>
+<span class="time">11 Jul 2016</span>
 
 <span class="categories">
-    &raquo; <a href="/category/ruby">ruby</a>
+    &raquo; <a href="/category/CSS">CSS</a>
 </span>
 
 
 <div class="content">
-    <div class="post"><p>Parsing JSON with Ruby is actually extremely easy. All you have to do is have the json gem installed (<code class="highlighter-rouge">gem install json</code>) and call the <code class="highlighter-rouge">JSON.parse</code> method on the JSON data to convert it to ruby hashes. If you look at this small program here, you can see how I have implemented parsing JSON in Ruby.</p>
+    <div class="post"><p>圣杯布局：左中右三栏</p>
 
-<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby"><span class="c1">#!/usr/bin/env ruby</span>
+<div class="language-html highlighter-rouge"><pre class="highlight"><code>
+<span class="nt">&lt;style </span><span class="na">type=</span><span class="s">"text/css"</span><span class="nt">&gt;</span>
+	
+<span class="nt">&lt;/style&gt;</span>
 
-<span class="nb">require</span> <span class="s1">'json'</span>
-<span class="nb">require</span> <span class="s1">'net/http'</span>
-<span class="nb">require</span> <span class="s1">'libnotify'</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"mainWrap-1"</span><span class="nt">&gt;</span>	<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"main-1"</span><span class="nt">&gt;&lt;/div&gt;&lt;/div&gt;</span>   
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"left-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;div</span> <span class="na">class=</span><span class="s">"right-1"</span><span class="nt">&gt;&lt;/div&gt;</span>
 
-<span class="k">def</span> <span class="nf">parsejson</span>
-    <span class="n">file</span> <span class="o">=</span> <span class="s2">"http://api.openweathermap.org/data/2.5/find?q=London&amp;mode=json"</span>
-    <span class="n">response</span> <span class="o">=</span> <span class="no">Net</span><span class="o">::</span><span class="no">HTTP</span><span class="p">.</span><span class="nf">get_response</span><span class="p">(</span><span class="no">URI</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">file</span><span class="p">))</span>
-    <span class="n">weatherjson</span> <span class="o">=</span> <span class="n">response</span><span class="p">.</span><span class="nf">body</span>
-    <span class="n">actual</span> <span class="o">=</span> <span class="no">JSON</span><span class="p">.</span><span class="nf">parse</span><span class="p">(</span><span class="n">weatherjson</span><span class="p">)</span>
-
-    <span class="c1"># check for errors</span>
-    <span class="k">if</span> <span class="n">actual</span><span class="p">.</span><span class="nf">has_key?</span> <span class="s1">'Error'</span>
-        <span class="k">raise</span> <span class="s2">"error with the url"</span>
-    <span class="k">end</span>
-
-    <span class="n">results</span> <span class="o">=</span> <span class="p">[]</span>
-
-    <span class="n">actual</span><span class="p">[</span><span class="s2">"list"</span><span class="p">].</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">listitem</span><span class="o">|</span>
-        <span class="n">weather</span> <span class="o">=</span> <span class="n">listitem</span><span class="p">[</span><span class="s2">"weather"</span><span class="p">]</span>
-        <span class="n">weather</span><span class="p">.</span><span class="nf">each</span> <span class="k">do</span> <span class="o">|</span><span class="n">weath</span><span class="o">|</span>
-            <span class="n">results</span><span class="p">.</span><span class="nf">push</span><span class="p">(</span><span class="n">weath</span><span class="p">[</span><span class="s2">"description"</span><span class="p">])</span>
-        <span class="k">end</span>
-        <span class="n">main</span> <span class="o">=</span> <span class="n">listitem</span><span class="p">[</span><span class="s2">"main"</span><span class="p">]</span>
-        <span class="n">temp</span> <span class="o">=</span> <span class="n">main</span><span class="p">[</span><span class="s2">"temp"</span><span class="p">]</span> <span class="o">-</span> <span class="mi">273</span><span class="o">.</span><span class="mi">15</span>
-        <span class="n">results</span><span class="p">.</span><span class="nf">push</span> <span class="p">(</span><span class="s2">"%.2f"</span> <span class="o">%</span> <span class="n">temp</span><span class="p">)</span>
-    <span class="k">end</span>
-
-    <span class="k">return</span> <span class="n">results</span>
-<span class="k">end</span></code></pre></figure>
+</code></pre>
+</div>
 
 </div>
     <div class="share-page">
@@ -191,7 +171,7 @@
     <script src="https://apis.google.com/js/platform.js" async defer></script>
 
     <!-- Facebook -->
-    <div class="fb-share-button" data-href="https://seeacloud.github.io/ruby/2013/12/23/ruby-json.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
+    <div class="fb-share-button" data-href="https://seeacloud.github.io/css/2016/07/11/shengbei.html" data-layout="button_count" style="position: relative; top: -8px; left: 3px;"></div>
 </div>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
@@ -216,12 +196,19 @@
     
         
             
-        
-    
-
-    
-    
-        
+                
+                <div class="panel-body">
+                <h4>Related Posts</h4>
+                <ul>
+                
+                <li class="relatedPost">
+                    <a href="https://seeacloud.github.io/css/2016/07/11/shuangfeiyi.html">CSS 双飞翼布局</a>
+                    
+                        (Categories: <a href="/category/CSS">CSS</a>)
+                    
+                </li>
+                
+                
             
         
     
@@ -234,21 +221,6 @@
     
 
     
-    
-        
-            
-        
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
     
         
             
@@ -338,24 +310,6 @@
             
         
     
-
-    
-    
-        
-            
-        
-    
-        
-            
-        
-    
-
-    
-    
-        
-            
-        
-    
         
             
         
@@ -384,16 +338,6 @@
         
             
         
-    
-
-    
-    
-        
-            
-        
-    
-
-    
     
         
             
@@ -443,14 +387,65 @@
         
     
 
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+    
+    
+        
+            
+        
+    
+
+
+    </ul>
+    </div>
 
 
 <div class="PageNavigation">
   
-    <a class="prev" href="/jekyll/2013/02/19/welcome-to-jekyll.html">&laquo; Welcome to Jekyll!</a>
+    <a class="prev" href="/css/2016/07/11/shuangfeiyi.html">&laquo; CSS 双飞翼布局</a>
   
-  
-    <a class="next" href="/jekyll/2013/12/23/welcome-to-simply-grey.html">Welcome to Simply Grey &raquo;</a>
   
 </div>
 
@@ -461,8 +456,8 @@
         /* <![CDATA[ */
 
         var disqus_shortname = "前端笔记本...";
-        var disqus_identifier = "https://seeacloud.github.io_Parsing JSON with Ruby";
-        var disqus_title = "Parsing JSON with Ruby";
+        var disqus_identifier = "https://seeacloud.github.io_CSS 圣杯布局";
+        var disqus_title = "CSS 圣杯布局";
 
         /* * * DON'T EDIT BELOW THIS LINE * * */
         (function() {
